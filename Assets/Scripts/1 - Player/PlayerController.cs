@@ -19,10 +19,17 @@ public class PlayerController : MonoBehaviour
     public float JumpTime;
     private bool isJumping;
 
+    public int maxHealth = 5;
+    public int currentHealth;
+    public float godModeTime = 1.5f;
+
+    bool godModeOn;
+    private float godModeOnTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        currentHealth = maxHealth;
     }
 
     void FixedUpdate()
@@ -34,6 +41,15 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
+        if (godModeOn)
+        {
+            godModeOnTimer -= Time.deltaTime;
+            if (godModeOnTimer < 0)
+                godModeOn = false;
+
+        }
+
+
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRad, whatIsGorund);
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
@@ -60,6 +76,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+        }
+    }
+
+    public void ChangeHealth (int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + "/" + maxHealth);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DeathZone"))
+        {
+            Destroy(gameObject);
+
         }
     }
 }

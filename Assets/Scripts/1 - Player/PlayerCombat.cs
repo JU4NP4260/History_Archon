@@ -8,15 +8,29 @@ public class PlayerCombat : MonoBehaviour
     public Transform meleePos;
     public LayerMask enemyLayers;
 
+    private float timeBtwAttack;
+    public float StartTimeBtwAttack;
+
     public float meleeRange = 0.6f;
     public int meleeDamage = 5;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if(timeBtwAttack <= 0)
         {
-            MeleeAttack();
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                MeleeAttack();
+                timeBtwAttack = StartTimeBtwAttack;
+            }
+
         }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
+
+        
     }
 
     void MeleeAttack()
@@ -28,9 +42,9 @@ public class PlayerCombat : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(meleePos.position, meleeRange, enemyLayers);
 
         //Hacer dano
-        foreach(Collider2D enemy in hitEnemies)
+        for (int i = 0; i < hitEnemies.Length; i++)
         {
-            enemy.GetComponent<Basic_Enemy>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<Basic_Enemy>().TakeDamage(meleeDamage);
         } 
 
     }
