@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-
+    [Header("Melee Config.")]
     public Transform meleePos;
     public LayerMask enemyLayers;
 
@@ -13,6 +13,9 @@ public class PlayerCombat : MonoBehaviour
 
     public float meleeRange = 0.6f;
     public int meleeDamage = 5;
+
+    [Header("Range Attack Config.")]
+    private bool m_FacingRight = true;
 
     void Update()
     {
@@ -56,4 +59,13 @@ public class PlayerCombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(meleePos.position, meleeRange);
     }
+
+    private void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+
+        transform.Rotate(0f, 180f, 0f);
+
+    }
+
 }
