@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     public float JumpForce;
 
+    bool facingRight = true;
+
     private bool isGrounded;
     public Transform feetPos;
     public float checkRad;
@@ -77,6 +79,34 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            facingRight = true;
+            FlipRight();
+        }
+        else if(Input.GetKeyDown(KeyCode.A));
+        {
+            FlipLeft();
+        }
+    }
+
+    void Flip()
+    {
+        if (facingRight == true)
+        {
+            transform.Rotate(0f, 0f, 0f);
+        }
+        else (facingRight != true)
+        {
+
+            transform.Rotate(0f, 180f, 0f);
+        }
+    }
+
+    void FlipLeft()
+    {
+        transform.Rotate(0f, 180f, 0f);
     }
 
     public void ChangeHealth (int amount)

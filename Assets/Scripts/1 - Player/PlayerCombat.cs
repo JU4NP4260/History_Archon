@@ -15,6 +15,9 @@ public class PlayerCombat : MonoBehaviour
     public int meleeDamage = 5;
 
     [Header("Range Attack Config.")]
+    public Transform firePoint;
+    public GameObject Projectile_01;
+
     private bool m_FacingRight = true;
 
     void Update()
@@ -33,7 +36,11 @@ public class PlayerCombat : MonoBehaviour
             timeBtwAttack -= Time.deltaTime;
         }
 
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+
+        }
     }
 
     void MeleeAttack()
@@ -49,6 +56,12 @@ public class PlayerCombat : MonoBehaviour
         {
             hitEnemies[i].GetComponent<Basic_Enemy>().TakeDamage(meleeDamage);
         } 
+
+    }
+
+    void Shoot()
+    {
+        Instantiate(Projectile_01, firePoint.position, firePoint.rotation);
 
     }
 
