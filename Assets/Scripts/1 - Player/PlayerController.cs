@@ -5,28 +5,36 @@ using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    [Header("Movement & Jumping")]
     public float PlayerSpeed;
-    private float moveInput;
     public float JumpForce;
-
-    bool facingRight = true;
-
-    private bool isGrounded;
+    public float JumpTime;
     public Transform feetPos;
     public float checkRad;
     public LayerMask whatIsGorund;
 
-    private float JumpTimeTimer;
-    public float JumpTime;
-    private bool isJumping;
 
+    [Header("Health")]
+    public float godModeTime = 1.5f;
     public int maxHealth = 5;
     public int currentHealth;
-    public float godModeTime = 1.5f;
 
+    [Header("Miscelanious")]
+    public Vector2 anglesToRotate;
+
+
+
+    bool facingRight = true;
     bool godModeOn;
+
+    private bool isGrounded;
+    private float JumpTimeTimer;
     private float godModeOnTimer;
+    private bool isJumping;
+    private float moveInput;
+
+    private Rigidbody2D rb;
+
 
     void Start()
     {
@@ -43,6 +51,18 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        //Flip Player when moving
+        if(horizontalInput > 0.01f)
+        {
+            this.transform.Rotate(anglesToRotate * 0);
+        }
+        else if (horizontalInput < 0.01f)
+        {
+            this.transform.Rotate(anglesToRotate * 180);
+        }
+
         if (godModeOn)
         {
             godModeOnTimer -= Time.deltaTime;
@@ -79,35 +99,9 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
-
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            facingRight = true;
-            FlipRight();
-        }
-        else if(Input.GetKeyDown(KeyCode.A));
-        {
-            FlipLeft();
-        }
     }
 
-    void Flip()
-    {
-        if (facingRight == true)
-        {
-            transform.Rotate(0f, 0f, 0f);
-        }
-        else (facingRight != true)
-        {
 
-            transform.Rotate(0f, 180f, 0f);
-        }
-    }
-
-    void FlipLeft()
-    {
-        transform.Rotate(0f, 180f, 0f);
-    }
 
     public void ChangeHealth (int amount)
     {
@@ -121,7 +115,12 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("DeathZone"))
         {
             Destroy(gameObject);
-
         }
+    }
+
+    public void Flip()
+    {
+      
+
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2023878040496286440}
   - component: {fileID: 4949272899155703083}
   - component: {fileID: 368829197228986492}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 15
+  bulletDamage: 2
   rb: {fileID: 2023878040496286440}
 --- !u!1 &6580749479127450796
 GameObject:
@@ -147,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6580749479127450797}
   - component: {fileID: 6580749479127450794}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

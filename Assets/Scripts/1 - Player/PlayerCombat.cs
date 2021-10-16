@@ -54,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
         //Hacer dano
         for (int i = 0; i < hitEnemies.Length; i++)
         {
-            hitEnemies[i].GetComponent<Basic_Enemy>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
         } 
 
     }
@@ -80,5 +80,4 @@ public class PlayerCombat : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
 
     }
-
 }
