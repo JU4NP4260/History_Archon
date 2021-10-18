@@ -71,6 +71,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            godModeOn = true;
+        }
+
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRad, whatIsGorund);
 
