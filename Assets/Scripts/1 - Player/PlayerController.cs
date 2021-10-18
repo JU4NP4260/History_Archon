@@ -53,15 +53,6 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        //Flip Player when moving
-        if(horizontalInput > 0.01f)
-        {
-            this.transform.Rotate(anglesToRotate * 0);
-        }
-        else if (horizontalInput < 0.01f)
-        {
-            this.transform.Rotate(anglesToRotate * 180);
-        }
 
         if (godModeOn)
         {
@@ -121,11 +112,5 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void Flip()
-    {
-      
-
     }
 }
