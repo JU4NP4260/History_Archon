@@ -28,7 +28,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (mustPatrol)
         {
-            mustFlip = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer); 
+            mustFlip = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer);
 
         }
     }
@@ -63,6 +63,16 @@ public class BasicEnemy : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         moveSpeed *= -1;
         mustPatrol = true;
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
 
 
