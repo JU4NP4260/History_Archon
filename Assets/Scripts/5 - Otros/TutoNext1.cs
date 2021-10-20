@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class TutoNext1 : MonoBehaviour
 {
-    public Transform teleportTarget;
     public GameObject PlayerObject;
+    private int nextSceneToLoad;
+
+    private void Start()
+    {
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            PlayerObject.transform.position = teleportTarget.transform.position; 
+            SceneManager.LoadScene(nextSceneToLoad);
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : MonoBehaviour
+public class ClasicEnemy : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Transform groundCheckPos;
@@ -10,7 +10,7 @@ public class BasicEnemy : MonoBehaviour
 
 
     public float moveSpeed;
-    public int EnemyHealth = 10;
+    public int EnemyHealth = 15;
 
 
     [HideInInspector]
@@ -71,7 +71,7 @@ public class BasicEnemy : MonoBehaviour
 
         if (player != null)
         {
-            player.ChangeHealth(-1);
+            player.ChangeHealth(-2);
         }
     }
 
@@ -93,3 +93,4 @@ public class BasicEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
