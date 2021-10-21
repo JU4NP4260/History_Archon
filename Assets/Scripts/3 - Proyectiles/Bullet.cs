@@ -25,10 +25,18 @@ public class Bullet : MonoBehaviour
         }
         Destroy();
 
-        ClasicEnemy enemy2 = hitInfo.GetComponent<ClasicEnemy>();
+        ClasicEnemyRange enemy2 = hitInfo.GetComponent<ClasicEnemyRange>();
         if (enemy2 != null)
         {
             enemy2.TakeDamage(bulletDamage);
+
+        }
+        Destroy();
+
+        ClasicEnemy enemy3 = hitInfo.GetComponent<ClasicEnemy>();
+        if (enemy3 != null)
+        {
+            enemy3.TakeDamage(bulletDamage);
 
         }
         Destroy();
