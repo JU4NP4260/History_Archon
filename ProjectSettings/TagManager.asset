@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - DeathZone
   - CanvasWin
+  - Spear
   layers:
   - Default
   - TransparentFX
