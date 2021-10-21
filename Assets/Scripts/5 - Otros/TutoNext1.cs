@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TutoNext1 : MonoBehaviour
+public class FinalStage : MonoBehaviour
 {
     public GameObject PlayerObject;
     private int nextSceneToLoad;
