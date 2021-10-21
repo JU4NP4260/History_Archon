@@ -17,6 +17,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  bodyCollider: {fileID: 7968075780311053740}
   moveSpeed: 160
   EnemyHealth: 18
   mustPatrol: 0
@@ -50,15 +51,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.151297
+      value: 3.7040138
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.23
+      value: -2.6979556
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 257.7556
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66,15 +67,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -111,6 +112,11 @@ GameObject:
 --- !u!50 &1873821604869257401 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8400739867506294837, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
+  m_PrefabInstance: {fileID: 7968075781429786764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &7968075780311053740 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1129745696, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
   m_PrefabInstance: {fileID: 7968075781429786764}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &691442434748577122 stripped
