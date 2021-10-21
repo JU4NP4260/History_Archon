@@ -72,7 +72,12 @@ public class BasicEnemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-0.2f, 0.2f);
+        if (bodyCollider.IsTouchingLayers(groundLayer))
+        {
+
+            transform.localScale = new Vector2(-0.2f, 0.2f);
+
+        }
     }
 
     void Flip()
