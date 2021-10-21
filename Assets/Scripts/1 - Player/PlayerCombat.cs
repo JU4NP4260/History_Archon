@@ -61,6 +61,8 @@ public class PlayerCombat : MonoBehaviour
         {
             hitEnemies[i].GetComponent<ClasicEnemy>().TakeDamage(meleeDamage);
         }
+
+
     }
 
     void Shoot()

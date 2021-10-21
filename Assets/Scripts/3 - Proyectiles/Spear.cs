@@ -6,6 +6,7 @@ public class Spear : MonoBehaviour
 {
     public float dieTime, damage;
     public GameObject diePEFFECt;
+    public GameObject Player;
 
     void Start()
     {
@@ -17,9 +18,16 @@ public class Spear : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(gameObject);
+
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
 
     IEnumerator CountDownTime()
@@ -29,6 +37,12 @@ public class Spear : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Flip() { 
+    /*
+    public void OnTriggerEnter2D()
+    {
+        PlayerController.ChangeHealth
+
     }
+
+    */
 }

@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public GameObject HealthBar;
     public GameObject OverScreen;
+    public GameObject Spear;
 
 
     void Start()
@@ -161,6 +162,8 @@ public class PlayerController : MonoBehaviour
         {
             death();
         }
+
+
     }
 
     private void Flip()

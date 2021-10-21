@@ -15,6 +15,7 @@ MonoBehaviour:
   dieTime: 3
   damage: 1
   diePEFFECt: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1001 &1141798264412337409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,6 +26,10 @@ PrefabInstance:
     - target: {fileID: 2023878040496286440, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
       propertyPath: m_Constraints
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949272899155703083, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6580749477790961442, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
       propertyPath: m_Sprite
@@ -86,6 +91,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile_01 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6580749477790961445, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580749477790961445, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
+      propertyPath: m_TagString
+      value: Spear
+      objectReference: {fileID: 0}
     - target: {fileID: 6580749479127450794, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -101,6 +114,10 @@ PrefabInstance:
     - target: {fileID: 6580749479127450794, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
       propertyPath: m_Intensity
       value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580749479127450796, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 368829197228986492, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
