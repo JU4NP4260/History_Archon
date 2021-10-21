@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    bool facingRight = true;
+    bool m_FacingRight = true;
     bool godModeOn;
 
     private bool isGrounded;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
 
     private Rigidbody2D rb;
+    public Animator animator;
 
 
     void Start()
@@ -47,13 +48,27 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * PlayerSpeed, rb.velocity.y);
+
+        // If the input is moving the player right and the player is facing left...
+        if (moveInput > 0 && !m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (moveInput < 0 && m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+        }
     }
 
-   
+    
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
         if (godModeOn)
         {
@@ -114,5 +129,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Flip()
+    {
+
+        m_FacingRight = !m_FacingRight;
+
+        transform.Rotate(0f, 180f, 0f);
     }
 }

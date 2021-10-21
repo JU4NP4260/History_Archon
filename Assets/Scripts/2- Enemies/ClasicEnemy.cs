@@ -8,9 +8,13 @@ public class ClasicEnemy : MonoBehaviour
     public Transform groundCheckPos;
     public LayerMask groundLayer;
     public Collider2D bodyCollider;
+    public Transform player;
 
     public float moveSpeed;
+    public float meleeRange;
     public int EnemyHealth = 15;
+    public int CurrentEnemyHealth;
+    private float distToPlayer;
 
 
     [HideInInspector]
@@ -21,6 +25,7 @@ public class ClasicEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+        CurrentEnemyHealth = EnemyHealth;
         mustPatrol = true;
     }
 
@@ -39,6 +44,17 @@ public class ClasicEnemy : MonoBehaviour
         {
             Patrol();
         }
+
+        distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (distToPlayer <= meleeRange)
+        {
+            if (player.position.x > transform.position.x && transform.localScale.x < 0 || player.position.x < transform.position.x && transform.localScale.x > 0)
+            {
+                Flip();
+            }
+
+        }
     }
 
     void Patrol()
@@ -50,8 +66,10 @@ public class ClasicEnemy : MonoBehaviour
         }
 
         rb.velocity = new Vector2(moveSpeed * Time.fixedDeltaTime, rb.velocity.y);
-    }
 
+        distToPlayer = Vector2.Distance(transform.position, player.position);
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         transform.localScale = new Vector2(-0.2f, 0.2f);
@@ -78,9 +96,9 @@ public class ClasicEnemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        EnemyHealth -= damage;
+        CurrentEnemyHealth -= damage;
         Debug.Log("Damage TAKEN!");
-        if(EnemyHealth <= 0)
+        if(CurrentEnemyHealth <= 0)
         {
             Die();
             Debug.Log("Enemy Killed!");
