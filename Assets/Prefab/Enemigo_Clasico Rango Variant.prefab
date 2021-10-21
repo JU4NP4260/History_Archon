@@ -53,7 +53,7 @@ MonoBehaviour:
   Spear: {fileID: 6092244054222125604, guid: cbc4d40351fce98469a66bd3b012d5f8, type: 3}
   moveSpeed: 100
   shootRange: 5
-  timeBTWShots: 2
+  timeBTWShots: 1
   spearSpeed: 5
   EnemyHealth: 15
   mustPatrol: 0
@@ -72,15 +72,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.69
+      value: 4.3855476
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.77
+      value: 3.320384
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 257.7556
+      value: 515.5112
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalRotation.w
