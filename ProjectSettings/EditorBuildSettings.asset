@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3 - Nivel_Clasica.unity
     guid: c9a4600a86ad6cc40978cdc0a162f363
+  - enabled: 1
+    path: Assets/Scenes/4 - Nivel_Victoriano.unity
+    guid: f7fef2ffbd2f54048af03d4e68fc3fc7
   m_configObjects: {}

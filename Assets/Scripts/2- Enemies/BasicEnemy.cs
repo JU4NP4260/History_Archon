@@ -24,6 +24,7 @@ public class BasicEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<Transform>();
 
         CurrentEnemyHealth = EnemyHealth;
         mustPatrol = true;

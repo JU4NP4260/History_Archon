@@ -12,7 +12,7 @@ public class PlayerCombat : MonoBehaviour
     public float StartTimeBtwAttack;
 
     public float meleeRange = 0.6f;
-    public int meleeDamage = 5;
+    public int meleeDamage = 4;
 
     [Header("Range Attack Config.")]
     public Transform firePoint;
@@ -22,7 +22,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if(timeBtwAttack <= 0)
+        if(timeBtwAttack <= 1f)
         {
             if (Input.GetKeyDown(KeyCode.K))
             {
