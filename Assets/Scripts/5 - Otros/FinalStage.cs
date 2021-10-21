@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinalStage : MonoBehaviour
+public class TutoNext1 : MonoBehaviour
 {
     public GameObject PlayerObject;
     private int nextSceneToLoad;
 
     private void Start()
     {
-        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex - 3;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
