@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage(bulletDamage);
 
         }
-        Destroy(gameObject);
+        Destroy();
 
         ClasicEnemy enemy2 = hitInfo.GetComponent<ClasicEnemy>();
         if (enemy2 != null)
@@ -31,8 +31,12 @@ public class Bullet : MonoBehaviour
             enemy2.TakeDamage(bulletDamage);
 
         }
-        Destroy(gameObject);
+        Destroy();
     }
 
+    private void Destroy()
+    {
+        Destroy(gameObject);
 
+    }
 }

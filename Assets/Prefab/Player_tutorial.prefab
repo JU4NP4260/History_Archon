@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 3084202454945687616}
   - component: {fileID: 3084202454945687617}
   - component: {fileID: 3084202454945687618}
+  - component: {fileID: 5320687077155136341}
   m_Layer: 6
   m_Name: Player_tutorial
   m_TagString: Player
@@ -142,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 3084202454945687620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.45, y: -3.01, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.20647658, y: 0.20184001, z: 1}
   m_Children:
   - {fileID: 3084202454917951091}
   - {fileID: 3084202454100668161}
@@ -272,6 +273,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anglesToRotate: {x: 0, y: 180}
+  animator: {fileID: 5320687077155136341}
 --- !u!114 &3084202454945687618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +295,25 @@ MonoBehaviour:
   meleeDamage: 5
   firePoint: {fileID: 3084202456021409847}
   Projectile_01: {fileID: 6580749477790961445, guid: b1f90434691bb784b9df9ce3b7eb419d, type: 3}
+--- !u!95 &5320687077155136341
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084202454945687620}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba276a6c79f40094f8737171d5c1c708, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3084202456021409844
 GameObject:
   m_ObjectHideFlags: 0

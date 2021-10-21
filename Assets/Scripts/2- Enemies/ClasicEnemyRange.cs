@@ -24,6 +24,7 @@ public class ClasicEnemyRange : MonoBehaviour
     [HideInInspector]
     public bool mustPatrol;
     public bool mustFlip, canShoot;
+    private int CurrentEnemyHealth;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class ClasicEnemyRange : MonoBehaviour
 
         mustPatrol = true;
         canShoot = true;
+        CurrentEnemyHealth = EnemyHealth;
     }
 
     private void FixedUpdate()
@@ -122,9 +124,9 @@ public class ClasicEnemyRange : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        EnemyHealth -= damage;
+        CurrentEnemyHealth -= damage;
         Debug.Log("Damage TAKEN!");
-        if(EnemyHealth <= 0)
+        if(CurrentEnemyHealth <= 0)
         {
             Die();
             Debug.Log("Enemy Killed!");
