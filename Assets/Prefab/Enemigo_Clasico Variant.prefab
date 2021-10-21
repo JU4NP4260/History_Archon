@@ -18,8 +18,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   bodyCollider: {fileID: 7968075780311053740}
+  player: {fileID: 0}
   moveSpeed: 160
+  meleeRange: 4
   EnemyHealth: 18
+  CurrentEnemyHealth: 0
   mustPatrol: 0
   mustFlip: 0
 --- !u!1001 &7968075781429786764

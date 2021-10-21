@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("DeathZone"))
         {
-            Destroy(gameObject);
+            death();
         }
     }
 

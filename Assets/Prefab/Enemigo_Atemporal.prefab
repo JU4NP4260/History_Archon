@@ -151,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09289229, y: 1.0218163}
+  m_Offset: {x: 0.00797677, y: -0.11295986}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.92399, y: 6.1477814}
+  m_Size: {x: 4.8318114, y: 6.6016903}
   m_EdgeRadius: 0
 --- !u!61 &1129745697
 BoxCollider2D:
@@ -207,7 +207,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  bodyCollider: {fileID: 1129745696}
+  player: {fileID: 0}
   moveSpeed: 150
+  meleeRange: 4
   EnemyHealth: 15
+  CurrentEnemyHealth: 0
   mustPatrol: 0
   mustFlip: 0
