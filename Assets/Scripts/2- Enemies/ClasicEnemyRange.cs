@@ -2,26 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClasicEnemy : MonoBehaviour
-{
+public class ClasicEnemyRange : MonoBehaviour
+{   
+    [Header("Must Reference")]
     public Rigidbody2D rb;
     public Transform groundCheckPos;
     public LayerMask groundLayer;
     public Collider2D bodyCollider;
+    public Transform player, ShootPos;
+    public GameObject Spear;
 
+    [Header("Variables")]
     public float moveSpeed;
+    public float shootRange;
+    public float timeBTWShots;
+    public float spearSpeed;
     public int EnemyHealth = 15;
+    private float distToPlayer;
 
 
     [HideInInspector]
     public bool mustPatrol;
-    public bool mustFlip;
+    public bool mustFlip, canShoot;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         mustPatrol = true;
+        canShoot = true;
     }
 
     private void FixedUpdate()
@@ -39,6 +48,41 @@ public class ClasicEnemy : MonoBehaviour
         {
             Patrol();
         }
+
+        distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if(distToPlayer <= shootRange)
+        {
+            if(player.position.x > transform.position.x && transform.localScale.x < 0 || player.position.x < transform.position.x && transform.localScale.x > 0)
+            {
+                Flip();
+            }
+
+            mustPatrol = false;
+            rb.velocity = Vector2.zero;
+
+            if(canShoot == true)
+            {
+
+                StartCoroutine(Shoot());
+
+            }
+        }
+        else
+        {
+            mustPatrol = true;
+        }
+    }
+
+    IEnumerator Shoot()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(timeBTWShots);
+        GameObject newSpear = Instantiate(Spear, ShootPos.position, Quaternion.identity);
+
+        newSpear.GetComponent<Rigidbody2D>().velocity = new Vector2(spearSpeed * moveSpeed * Time.fixedDeltaTime, 0f);
+        canShoot = true;
+
     }
 
     void Patrol()
