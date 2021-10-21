@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     public Animator animator;
+    public GameObject HealthBar;
+    public GameObject OverScreen;
 
 
     void Start()
@@ -120,6 +123,35 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+
+        if (currentHealth <= 0)
+        {
+            death();
+        }
+    }
+
+    void death()
+    {
+       if(currentHealth <= 0)
+        {
+            StartCoroutine("Respawn");
+        }
+        
+    }
+
+    IEnumerator Respawn()
+    {
+        Gameover();
+        yield return new WaitForSeconds(3.2f);
+        OverScreen.SetActive(false);
+        HealthBar.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+    public void Gameover()
+    {
+        OverScreen.SetActive(true);
+        HealthBar.SetActive(false);
 
     }
 
