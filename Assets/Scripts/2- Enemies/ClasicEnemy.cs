@@ -103,7 +103,9 @@ public class ClasicEnemy : MonoBehaviour
     {
         CurrentEnemyHealth -= damage;
         Debug.Log("Damage TAKEN!");
-        if(CurrentEnemyHealth <= 0)
+        FindObjectOfType<AudioManager>().Play("EnemyHurt");
+
+        if (CurrentEnemyHealth <= 0)
         {
             Die();
             Debug.Log("Enemy Killed!");

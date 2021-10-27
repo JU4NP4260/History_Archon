@@ -11,6 +11,7 @@ public class ClasicEnemyRange : MonoBehaviour
     public Collider2D bodyCollider;
     public Transform player, ShootPos;
     public GameObject Spear;
+    public Animator animator;
 
     [Header("Variables")]
     public float moveSpeed;
@@ -66,6 +67,7 @@ public class ClasicEnemyRange : MonoBehaviour
             if(canShoot == true)
             {
 
+                animator.Play("Classc_Shooting");
                 StartCoroutine(Shoot());
 
             }
@@ -126,7 +128,9 @@ public class ClasicEnemyRange : MonoBehaviour
     {
         CurrentEnemyHealth -= damage;
         Debug.Log("Damage TAKEN!");
-        if(CurrentEnemyHealth <= 0)
+        FindObjectOfType<AudioManager>().Play("EnemyHurt");
+
+        if (CurrentEnemyHealth <= 0)
         {
             Die();
             Debug.Log("Enemy Killed!");

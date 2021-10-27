@@ -54,8 +54,13 @@ MonoBehaviour:
     volume: 0.851
     pitch: 1
     Source: {fileID: 0}
-  - name: Timoff's Melee Atack
+  - name: MeleeAtack
     clip: {fileID: 8300000, guid: 1398a929843a29a44b14d2f51a99a854, type: 3}
-    volume: 0.81
+    volume: 0.5
     pitch: 0.85
+    Source: {fileID: 0}
+  - name: EnemyHurt
+    clip: {fileID: 8300000, guid: ad853fd8fd854214a80aee4947022080, type: 3}
+    volume: 0.5
+    pitch: 1
     Source: {fileID: 0}

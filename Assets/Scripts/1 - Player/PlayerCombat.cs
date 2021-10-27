@@ -51,12 +51,10 @@ public class PlayerCombat : MonoBehaviour
         //Detectar los enemigos
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(meleePos.position, meleeRange, enemyLayers);
 
-        //Hacer dano
-        for (int i = 0; i < hitEnemies.Length; i++)
-        {
-            hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
-        }
+        //Sonido
+        FindObjectOfType<AudioManager>().Play("MeleeAtack");
 
+        //Hacer dano
         for (int i = 0; i < hitEnemies.Length; i++)
         {
             hitEnemies[i].GetComponent<ClasicEnemy>().TakeDamage(meleeDamage);

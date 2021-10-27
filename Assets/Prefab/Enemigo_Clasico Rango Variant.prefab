@@ -51,6 +51,7 @@ MonoBehaviour:
   player: {fileID: 0}
   ShootPos: {fileID: 8174417508801253206}
   Spear: {fileID: 6092244054222125604, guid: cbc4d40351fce98469a66bd3b012d5f8, type: 3}
+  animator: {fileID: 1521523922}
   moveSpeed: 100
   shootRange: 5
   timeBTWShots: 1
@@ -59,6 +60,25 @@ MonoBehaviour:
   mustPatrol: 0
   mustFlip: 0
   canShoot: 0
+--- !u!95 &1521523922
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7965846314829132164}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 878980e0a18d8274cb5c0d10401809f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8398502843905050817
 PrefabInstance:
   m_ObjectHideFlags: 0
