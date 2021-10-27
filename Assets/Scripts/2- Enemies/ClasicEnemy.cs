@@ -14,8 +14,8 @@ public class ClasicEnemy : MonoBehaviour
     public float meleeRange;
     public int EnemyHealth = 15;
     public int CurrentEnemyHealth;
-    private float distToPlayer;
 
+    private float distToPlayer;
 
     [HideInInspector]
     public bool mustPatrol;

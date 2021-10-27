@@ -125,6 +125,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentHealth + "/" + maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
+        FindObjectOfType<AudioManager>().Play("PlayerHurt");
+
         if (currentHealth <= 0)
         {
             death();
@@ -134,9 +136,9 @@ public class PlayerController : MonoBehaviour
     void death()
     {
        if(currentHealth <= 0)
-        {
+       {
             StartCoroutine("Respawn");
-        }
+       }
         
     }
 

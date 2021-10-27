@@ -25,6 +25,25 @@ MonoBehaviour:
   CurrentEnemyHealth: 0
   mustPatrol: 0
   mustFlip: 0
+--- !u!95 &1253673975
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873821604869257541}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31504a44fe41352408d54b39f7be2a88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7968075781429786764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.01
+      value: -37.56849
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.35
+      value: 2.290384
       objectReference: {fileID: 0}
     - target: {fileID: 8400739867506294836, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -114,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 8d4950d127398244399a9e62b563897a, type: 3}
     - target: {fileID: 8400739867506295241, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
       propertyPath: m_Name
-      value: Enemigo_Clasico (1)
+      value: Enemigo_Clasico
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1129745695, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
