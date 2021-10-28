@@ -10,6 +10,7 @@ public class DeathZone : MonoBehaviour
 
         if (controller != null)
         {
+            FindObjectOfType<AudioManager>().Play("FallDeath");
             controller.ChangeHealth(-100);
         }
        

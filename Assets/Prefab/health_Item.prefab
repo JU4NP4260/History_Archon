@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2155898455725635019}
   - component: {fileID: 2155898455725635018}
   - component: {fileID: 2155898455725635017}
-  - component: {fileID: 2155898455725635016}
   - component: {fileID: 2155898455725635060}
   m_Layer: 0
   m_Name: health_Item
@@ -110,32 +109,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 9.28927, y: 6.9349475}
-  m_EdgeRadius: 0
---- !u!61 &2155898455725635016
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2155898455725635023}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.5551207, y: -13.102495}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 12}
-    newSize: {x: 16, y: 12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.2450414, y: 0.0001}
   m_EdgeRadius: 0
 --- !u!114 &2155898455725635060
 MonoBehaviour:

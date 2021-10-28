@@ -51,6 +51,7 @@ MonoBehaviour:
   player: {fileID: 0}
   ShootPos: {fileID: 8174417508801253206}
   Spear: {fileID: 6092244054222125604, guid: a73ae4db812326349a244111f2c8aed3, type: 3}
+  animator: {fileID: 0}
   moveSpeed: 100
   shootRange: 5
   timeBTWShots: 1
@@ -66,17 +67,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1253673975, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.627
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.795
+      value: 6.02
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -156,6 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8576538243536799035, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+    - {fileID: 1253673975, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
 --- !u!1 &7965846314829132164 stripped
 GameObject:

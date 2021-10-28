@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinalStage : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     public GameObject PlayerObject;
     private int nextSceneToLoad;
@@ -21,3 +21,4 @@ public class FinalStage : MonoBehaviour
         }
     }
 }
+

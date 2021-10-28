@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class HealthCollectible : MonoBehaviour
 {
+    public GameObject Player;
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerController controller = other.GetComponent<PlayerController>();
+
 
         if (controller != null)
         {
             if (controller.currentHealth < controller.maxHealth)
             {
-                controller.ChangeHealth(1);
-                Destroy(gameObject);
+                if(controller.currentHealth != 0)
+                {
+                    FindObjectOfType<AudioManager>().Play("Health");
+                }
+                Destroy(gameObject);    
+                controller.ChangeHealth(+1);
             }
         }
     }

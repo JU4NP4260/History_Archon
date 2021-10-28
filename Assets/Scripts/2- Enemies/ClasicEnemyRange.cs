@@ -56,7 +56,8 @@ public class ClasicEnemyRange : MonoBehaviour
 
         if(distToPlayer <= shootRange)
         {
-            if(player.position.x > transform.position.x && transform.localScale.x < 0 || player.position.x < transform.position.x && transform.localScale.x > 0)
+            animator.Play("Classc_Shooting");
+            if (player.position.x > transform.position.x && transform.localScale.x < 0 || player.position.x < transform.position.x && transform.localScale.x > 0)
             {
                 Flip();
             }
@@ -66,10 +67,7 @@ public class ClasicEnemyRange : MonoBehaviour
 
             if(canShoot == true)
             {
-
-                animator.Play("Classc_Shooting");
                 StartCoroutine(Shoot());
-
             }
         }
         else
@@ -81,6 +79,7 @@ public class ClasicEnemyRange : MonoBehaviour
     IEnumerator Shoot()
     {
         canShoot = false;
+
         yield return new WaitForSeconds(timeBTWShots);
         GameObject newSpear = Instantiate(Spear, ShootPos.position, Quaternion.identity);
 
@@ -120,6 +119,7 @@ public class ClasicEnemyRange : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-2);
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
         }
     }
 

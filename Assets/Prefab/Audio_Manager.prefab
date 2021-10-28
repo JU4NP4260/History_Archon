@@ -64,3 +64,13 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     Source: {fileID: 0}
+  - name: Health
+    clip: {fileID: 8300000, guid: 4ae763c225178d54486c3d9428af8b25, type: 3}
+    volume: 0.4
+    pitch: 1
+    Source: {fileID: 0}
+  - name: FallDeath
+    clip: {fileID: 8300000, guid: 9470e31d338944e4aa397805ec2ea824, type: 3}
+    volume: 0.4
+    pitch: 1
+    Source: {fileID: 0}

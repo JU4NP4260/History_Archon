@@ -94,7 +94,8 @@ public class BasicEnemy : MonoBehaviour
 
         if (player != null)
         {
-            player.ChangeHealth(-2);
+            player.ChangeHealth(-1);
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
         }
     }
 

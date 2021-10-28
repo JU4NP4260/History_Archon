@@ -30,16 +30,15 @@ public class PlayerCombat : MonoBehaviour
                 timeBtwAttack = StartTimeBtwAttack;
             }
 
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+                timeBtwAttack -= StartTimeBtwAttack;
+            }
         }
         else
         {
             timeBtwAttack -= Time.deltaTime;
-        }
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-
         }
     }
 
@@ -58,6 +57,7 @@ public class PlayerCombat : MonoBehaviour
         for (int i = 0; i < hitEnemies.Length; i++)
         {
             hitEnemies[i].GetComponent<ClasicEnemy>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
         }
 
 

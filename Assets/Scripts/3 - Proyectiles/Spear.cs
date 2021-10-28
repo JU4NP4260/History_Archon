@@ -27,6 +27,7 @@ public class Spear : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
         }
     }
 
