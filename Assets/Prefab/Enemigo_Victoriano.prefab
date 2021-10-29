@@ -30,7 +30,7 @@ Transform:
   m_Father: {fileID: 7965846314829131897}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6740381910221055938
+--- !u!114 &-8822412281856233084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7965846314829132164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899b5f8ad88bcba4e8655fe79dc75c17, type: 3}
+  m_Script: {fileID: 11500000, guid: 9407da9889af3944b8e3e186e3f60b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7965846314829131896}
@@ -51,10 +51,9 @@ MonoBehaviour:
   player: {fileID: 0}
   ShootPos: {fileID: 8174417508801253206}
   Spear: {fileID: 6092244054222125604, guid: a73ae4db812326349a244111f2c8aed3, type: 3}
-  animator: {fileID: 0}
   moveSpeed: 100
-  shootRange: 5
-  timeBTWShots: 1
+  shootRange: 10
+  timeBTWShots: 0.5
   spearSpeed: 5
   EnemyHealth: 15
   mustPatrol: 0
@@ -115,6 +114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1873821604869257401, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c216dc5995335c34dacaa608c562b4b8, type: 2}
     - target: {fileID: 1873821604869257403, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_FlipX
       value: 0

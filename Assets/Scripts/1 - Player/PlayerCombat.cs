@@ -58,6 +58,8 @@ public class PlayerCombat : MonoBehaviour
         {
             hitEnemies[i].GetComponent<ClasicEnemy>().TakeDamage(meleeDamage);
             hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<ClasicEnemyRange>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<VictorianEnemyRange>().TakeDamage(meleeDamage);
         }
 
 
