@@ -7549,6 +7549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemigo_Clasico
       objectReference: {fileID: 0}
+    - target: {fileID: 7968075780311053740, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8576538243536799035, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: player
       value: 

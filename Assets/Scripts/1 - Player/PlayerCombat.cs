@@ -22,18 +22,18 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if(timeBtwAttack <= 0)
+        if(timeBtwAttack <= Time.time)
         {
             if (Input.GetKeyDown(KeyCode.K))
             {
                 MeleeAttack();
-                timeBtwAttack = StartTimeBtwAttack;
+                timeBtwAttack = Time.time + 0.5f;
             }
 
             if (Input.GetButtonDown("Fire1"))
             {
                 Shoot();
-                timeBtwAttack -= StartTimeBtwAttack;
+                timeBtwAttack = Time.time + 0.5f;
             }
         }
         else
@@ -54,21 +54,59 @@ public class PlayerCombat : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("MeleeAtack");
 
         //Hacer dano
-        for (int i = 0; i < hitEnemies.Length; i++)
-        {
-            hitEnemies[i].GetComponent<ClasicEnemy>().TakeDamage(meleeDamage);
-            hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
-            hitEnemies[i].GetComponent<ClasicEnemyRange>().TakeDamage(meleeDamage);
-            hitEnemies[i].GetComponent<VictorianEnemyRange>().TakeDamage(meleeDamage);
-        }
-
-
+        
     }
+            /*hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<VictorianEnemyRange>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<ClasicEnemy>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<ClasicEnemyRange>().TakeDamage(meleeDamage);
+            */
+
 
     void Shoot()
     {
         Instantiate(Projectile_01, firePoint.position, firePoint.rotation);
 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        BasicEnemy basicEnemy = collision.GetComponent<BasicEnemy>();
+        ClasicEnemy classicEnemy = collision.GetComponent<ClasicEnemy>();
+        ClasicEnemyRange classicEnemyRange = collision.GetComponent<ClasicEnemyRange>();
+        VictorianEnemyRange victorianEnemyRange = collision.GetComponent<VictorianEnemyRange>();
+
+        if (basicEnemy != null)
+        {
+            if (Input.GetKey(KeyCode.K))
+            {
+                basicEnemy.TakeDamage(meleeDamage);
+            }
+        }
+
+        if (classicEnemy != null)
+        {
+            if (Input.GetKey(KeyCode.K))
+            {
+                classicEnemy.TakeDamage(meleeDamage);
+            }
+        }
+
+        if (classicEnemyRange != null)
+        {
+            if (Input.GetKey(KeyCode.K))
+            {
+                classicEnemyRange.TakeDamage(meleeDamage);
+            }
+        }
+
+        if (victorianEnemyRange != null)
+        {
+            if (Input.GetKey(KeyCode.K))
+            {
+                victorianEnemyRange.TakeDamage(meleeDamage);
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 3084202454945687622}
   - component: {fileID: 3084202454945687623}
   - component: {fileID: 3084202454945687619}
+  - component: {fileID: 5155912262159172471}
   - component: {fileID: 3084202454945687616}
   - component: {fileID: 3084202454945687617}
   - component: {fileID: 3084202454945687618}
@@ -228,6 +229,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7627769, y: 6.965801}
   m_EdgeRadius: 0
+--- !u!61 &5155912262159172471
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084202454945687620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5.181863, y: 0.8947816}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.13, y: 10.39}
+    newSize: {x: 5.31, y: 6.87}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.930025, y: 4.533252}
+  m_EdgeRadius: 0
 --- !u!50 &3084202454945687616
 Rigidbody2D:
   serializedVersion: 4
@@ -289,6 +316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd03830048adde4888a02374c7fd42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy_1: {fileID: 8400739867506295241, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
+  Enemy_2: {fileID: 1873821604869257541, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+  Enemy_3: {fileID: 7965846314829132164, guid: 67467ca6509a6f444a65b3ecbdac7844, type: 3}
+  Enemy_4: {fileID: 7965846314829132164, guid: d63d6447f069f5b4c83defece40ae8f4, type: 3}
   meleePos: {fileID: 3084202454100668161}
   enemyLayers:
     serializedVersion: 2

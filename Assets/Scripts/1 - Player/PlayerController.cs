@@ -163,8 +163,6 @@ public class PlayerController : MonoBehaviour
         {
             death();
         }
-
-
     }
 
     private void Flip()
