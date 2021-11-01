@@ -242,7 +242,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.181863, y: 0.8947816}
+  m_Offset: {x: 5.0025897, y: 0.6661906}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -253,7 +253,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.930025, y: 4.533252}
+  m_Size: {x: 6.159446, y: 7.327141}
   m_EdgeRadius: 0
 --- !u!50 &3084202454945687616
 Rigidbody2D:
@@ -316,15 +316,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd03830048adde4888a02374c7fd42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy_1: {fileID: 8400739867506295241, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
-  Enemy_2: {fileID: 1873821604869257541, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
-  Enemy_3: {fileID: 7965846314829132164, guid: 67467ca6509a6f444a65b3ecbdac7844, type: 3}
-  Enemy_4: {fileID: 7965846314829132164, guid: d63d6447f069f5b4c83defece40ae8f4, type: 3}
+  enemy_1: {fileID: 1129745695, guid: 8af4be189ad0f004c81980f193b4bf34, type: 3}
+  enemy_2: {fileID: 8576538243536799035, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+  enemy_3: {fileID: 6740381910221055938, guid: 67467ca6509a6f444a65b3ecbdac7844, type: 3}
+  enemy_4: {fileID: -8822412281856233084, guid: d63d6447f069f5b4c83defece40ae8f4, type: 3}
   meleePos: {fileID: 3084202454100668161}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  StartTimeBtwAttack: 0.3
+  StartTimeBtwAttack: 0.5
   meleeRange: 0.6
   meleeDamage: 5
   firePoint: {fileID: 3084202456021409847}

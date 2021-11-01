@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    /*
+    [Header("Enemies")]
+    [SerializeField] BasicEnemy enemy_1;
+    [SerializeField] ClasicEnemy enemy_2;
+    [SerializeField] ClasicEnemyRange enemy_3;
+    [SerializeField] VictorianEnemyRange enemy_4;
+    */
+
     [Header("Melee Config.")]
     public Transform meleePos;
     public LayerMask enemyLayers;
@@ -12,7 +20,7 @@ public class PlayerCombat : MonoBehaviour
     public float StartTimeBtwAttack;
 
     public float meleeRange = 0.6f;
-    public int meleeDamage = 5;
+    public int meleeDamage = 1;
 
     [Header("Range Attack Config.")]
     public Transform firePoint;
@@ -54,13 +62,18 @@ public class PlayerCombat : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("MeleeAtack");
 
         //Hacer dano
-        
-    }
-            /*hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
+
+        /*
+        for (int i = 0; i< hitEnemies.Length; i++)
+        {
             hitEnemies[i].GetComponent<VictorianEnemyRange>().TakeDamage(meleeDamage);
+            hitEnemies[i].GetComponent<BasicEnemy>().TakeDamage(meleeDamage);
             hitEnemies[i].GetComponent<ClasicEnemy>().TakeDamage(meleeDamage);
             hitEnemies[i].GetComponent<ClasicEnemyRange>().TakeDamage(meleeDamage);
-            */
+        }
+
+        */
+    }
 
 
     void Shoot()
@@ -68,6 +81,40 @@ public class PlayerCombat : MonoBehaviour
         Instantiate(Projectile_01, firePoint.position, firePoint.rotation);
 
     }
+
+    IEnumerator enemy1Damage(BasicEnemy enemy)
+    {        
+        enemy.TakeDamage(meleeDamage);
+
+        yield return new WaitForSeconds(0.6f);       
+
+    }
+
+    IEnumerator enemy2Damage(ClasicEnemy enemy)
+    {
+        enemy.TakeDamage(meleeDamage);
+
+        yield return new WaitForSeconds(0.6f);
+
+    }
+
+    IEnumerator enemy3Damage(ClasicEnemyRange enemy)
+    {
+        enemy.TakeDamage(meleeDamage);
+
+        yield return new WaitForSeconds(0.6f);
+
+    }
+
+    IEnumerator enemy4Damage(VictorianEnemyRange enemy)
+    {
+        enemy.TakeDamage(meleeDamage);
+
+        yield return new WaitForSeconds(0.6f);
+
+    }
+
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -80,7 +127,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.K))
             {
-                basicEnemy.TakeDamage(meleeDamage);
+                StartCoroutine(enemy1Damage(basicEnemy));
             }
         }
 
@@ -88,7 +135,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.K))
             {
-                classicEnemy.TakeDamage(meleeDamage);
+                StartCoroutine(enemy2Damage(classicEnemy));
             }
         }
 
@@ -96,7 +143,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.K))
             {
-                classicEnemyRange.TakeDamage(meleeDamage);
+                StartCoroutine(enemy3Damage(classicEnemyRange));
             }
         }
 
@@ -104,7 +151,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.K))
             {
-                victorianEnemyRange.TakeDamage(meleeDamage);
+                StartCoroutine(enemy4Damage(victorianEnemyRange));
             }
         }
     }
