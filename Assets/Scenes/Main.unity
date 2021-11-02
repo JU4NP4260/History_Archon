@@ -849,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 758399651, guid: f59dab3ca0d74cb43ab077bd578f22d2, type: 3}
       propertyPath: m_Volume
-      value: 0.112
+      value: 0.225
       objectReference: {fileID: 0}
     - target: {fileID: 758399651, guid: f59dab3ca0d74cb43ab077bd578f22d2, type: 3}
       propertyPath: BypassEffects

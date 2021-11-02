@@ -124,8 +124,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentHealth + "/" + maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
 
-        
-
         if (currentHealth <= 0)
         {
             death();
