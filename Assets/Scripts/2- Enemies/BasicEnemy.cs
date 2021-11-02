@@ -15,7 +15,7 @@ public class BasicEnemy : MonoBehaviour
     public int EnemyHealth = 15;
     public int CurrentEnemyHealth;
     private float distToPlayer;
-
+    private int timeBtwDamage;
 
     [HideInInspector]
     public bool mustPatrol;
@@ -104,6 +104,7 @@ public class BasicEnemy : MonoBehaviour
     {
         CurrentEnemyHealth -= damage;
         Debug.Log("Damage TAKEN!");
+        timeBtwDamage = Time.time + 0.5f;
         if (CurrentEnemyHealth <= 0)
         {
             Die();
