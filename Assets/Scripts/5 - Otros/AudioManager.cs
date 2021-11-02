@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using System;
 
 public class AudioManager : MonoBehaviour
 {
     public Audio[] sounds;
+
     void Awake()
     {
         foreach (Audio s in sounds)

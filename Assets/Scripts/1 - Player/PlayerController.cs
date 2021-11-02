@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
     [Header("Miscelanious")]
     public Vector2 anglesToRotate;
 
-
-
     bool m_FacingRight = true;
     bool godModeOn;
 
@@ -33,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private float godModeOnTimer;
     private bool isJumping;
     private float moveInput;
+    private int currentScene;
 
     private Rigidbody2D rb;
     public Animator animator;
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
