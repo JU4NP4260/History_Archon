@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 881091587318293646}
   - component: {fileID: 3024072028652242131}
   - component: {fileID: 9096396521560121534}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,9 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e428c4a04f68f5d4c9a318dfb9cc9c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieTime: 0
   bulletSpeed: 10
   bulletDamage: 1
   rb: {fileID: -4487014158786670327}
+  player: {fileID: 3084202454945687620, guid: 8e2446cdc96db21428a96b43d5dfea0f, type: 3}
 --- !u!58 &5823255610646754413
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -196,7 +198,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.017108917, y: -0.042770952}
