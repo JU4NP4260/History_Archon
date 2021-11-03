@@ -72,7 +72,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - name: FallDeath
     clip: {fileID: 8300000, guid: 9470e31d338944e4aa397805ec2ea824, type: 3}
-    volume: 0.2
+    volume: 0.4
     pitch: 1.15
     Source: {fileID: 0}
 --- !u!82 &758399651

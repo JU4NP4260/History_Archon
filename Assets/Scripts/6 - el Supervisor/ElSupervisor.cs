@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ElSupervisor : MonoBehaviour
 {
     [Header("BoxCollider")]
     public CapsuleCollider2D Collider;
+    public GameObject PlayerObject;
 
     [Header("Projectiles")]
     public Transform shootPos1;
@@ -17,19 +19,22 @@ public class ElSupervisor : MonoBehaviour
 
     [Header("Boss Health")]
     public int CurrentBossHealth;
-    public int bossHealth = 70;
+    public int bossHealth = 120;
     public Transform healthDropPos;
     public GameObject healthDrop;
+    public GameObject PortalDrop;
 
 
     private float rotationCycle;
     private float rotation;
     private float timeBtwShot;
+    private int nextSceneToLoad;
 
     void Start()
     {
         rotationCycle = 1f;
         CurrentBossHealth = bossHealth;
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     void Update()
@@ -45,6 +50,11 @@ public class ElSupervisor : MonoBehaviour
         }
         rotation = (rotationCycle + Time.time)/2;
         transform.Rotate(0f, 0f, rotation);
+
+        if(CurrentBossHealth <= 0)
+        {
+            SceneManager.LoadScene(nextSceneToLoad);
+        }
     }
     void Shoot()
     {
@@ -59,20 +69,19 @@ public class ElSupervisor : MonoBehaviour
         Instantiate(healthDrop, healthDropPos.position, healthDropPos.rotation);
     }
 
+   void DropPortal()
+    {
+        Instantiate(PortalDrop, healthDropPos.position, healthDropPos.rotation);
+    }
+
     public void TakeDamage(int damage)
     {
         CurrentBossHealth -= damage;
         Debug.Log("Damage TAKEN!");
         FindObjectOfType<AudioManager>().Play("EnemyHurt");
-        if (CurrentBossHealth == 60)
-            DropHealth();
-        if (CurrentBossHealth == 50)
-            DropHealth();
-        if (CurrentBossHealth == 40)
+        if (CurrentBossHealth == 70)
             DropHealth();
         if (CurrentBossHealth == 30)
-            DropHealth();
-        if (CurrentBossHealth == 20)
             DropHealth();
         if (CurrentBossHealth == 10)
             DropHealth();
@@ -81,6 +90,7 @@ public class ElSupervisor : MonoBehaviour
         if (CurrentBossHealth <= 0)
         {
             Die();
+            DropPortal();
             Debug.Log("BOSS Killed!");
         }
 

@@ -12725,7 +12725,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: faf58d89b9dcdd047a5cee183971ca8a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1.25
   Loop: 0
   Mute: 0
@@ -13107,6 +13107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 906944255}
+  PlayerObject: {fileID: 0}
   shootPos1: {fileID: 746662610}
   shootPos2: {fileID: 1413254205}
   shootPos3: {fileID: 1555464976}
@@ -13116,6 +13117,7 @@ MonoBehaviour:
   bossHealth: 70
   healthDropPos: {fileID: 1821581957}
   healthDrop: {fileID: 2520268106359879094, guid: 7c3e292d94a91134083993464e5e92d3, type: 3}
+  PortalDrop: {fileID: 6941797361608423941, guid: 65922770f10f57a4daa78cf52c915403, type: 3}
 --- !u!212 &906944253
 SpriteRenderer:
   m_ObjectHideFlags: 0
