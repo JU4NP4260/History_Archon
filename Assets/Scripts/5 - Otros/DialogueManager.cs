@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public Animator animator;
+
     private Queue<string> sentences;
 
     void Start()
@@ -19,6 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        animator.SetBool("IsOpen", true);
 
         nameText.text = dialogue.name;
 
@@ -41,11 +44,23 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     void EndDialogue()
     {
+        animator.SetBool("IsOpen", false);
         Debug.Log("End of conversation. ");
         Endtext = true;
         Finish();
