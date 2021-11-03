@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             JumpTimeTimer = JumpTime;
-            animator.SetBool("isJumping", true); 
+            animator.Play("Timoff_Meleeanim");
             rb.velocity = Vector2.up * JumpForce;
         }
 
