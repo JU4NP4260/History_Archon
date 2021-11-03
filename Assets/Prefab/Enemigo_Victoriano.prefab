@@ -52,8 +52,8 @@ MonoBehaviour:
   ShootPos: {fileID: 8174417508801253206}
   Spear: {fileID: 6092244054222125604, guid: a73ae4db812326349a244111f2c8aed3, type: 3}
   moveSpeed: 100
-  shootRange: 10
-  timeBTWShots: 0.5
+  shootRange: 5
+  timeBTWShots: 1
   spearSpeed: 5
   EnemyHealth: 15
   mustPatrol: 0
@@ -76,11 +76,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.67
+      value: -2.17
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.02
+      value: -11.36
       objectReference: {fileID: 0}
     - target: {fileID: 1873821604869257400, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -128,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: da6ef17ffb45c2943bd40050d3848173, type: 3}
     - target: {fileID: 1873821604869257541, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_Name
-      value: Enemigo_Victoriano
+      value: Enemigo_Victoriano (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7968075780311053740, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_Size.x
@@ -151,8 +151,16 @@ PrefabInstance:
       value: 9.32
       objectReference: {fileID: 0}
     - target: {fileID: 7968075780311053741, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3763771
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968075780311053741, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968075780311053741, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
+      propertyPath: m_Offset.y
+      value: -4.8606853
       objectReference: {fileID: 0}
     - target: {fileID: 7968075780311053741, guid: 1f3610dece81ba64b8e583b63474983d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
