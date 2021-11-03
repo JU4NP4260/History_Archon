@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerCombat : MonoBehaviour
     [Header("Melee Config.")]
     public Transform meleePos;
     public LayerMask enemyLayers;
+    public Animator anim;
 
     private float timeBtwAttack;
     public float StartTimeBtwAttack;
@@ -28,6 +30,11 @@ public class PlayerCombat : MonoBehaviour
 
     private bool m_FacingRight = true;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Update()
     {
         if(timeBtwAttack <= Time.time)
@@ -36,6 +43,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 MeleeAttack();
                 timeBtwAttack = Time.time + 0.5f;
+                anim.Play("Timoff_Meleeanim");
             }
 
             if (Input.GetButtonDown("Fire1"))
