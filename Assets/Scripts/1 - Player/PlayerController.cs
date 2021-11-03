@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,10 +40,11 @@ public class PlayerController : MonoBehaviour
     public GameObject OverScreen;
     public GameObject Spear;
 
+    public UnityEvent interactAction;
 
     void Start()
     {
-
+        animator = GetComponent<Animator>(); 
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             JumpTimeTimer = JumpTime;
+            animator.SetBool("isJumping", true); 
             rb.velocity = Vector2.up * JumpForce;
         }
 
@@ -115,8 +118,6 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
     }
-
-
 
     public void ChangeHealth (int amount)
     {
