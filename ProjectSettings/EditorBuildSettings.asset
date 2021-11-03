@@ -21,9 +21,15 @@ EditorBuildSettings:
     path: Assets/Scenes/2 - Nivel_Tutorial.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/DialogueAtemporal.unity
+    guid: 9fe9ea5f2b9dfe74e96a505ef49e732e
+  - enabled: 1
     path: Assets/Scenes/3 - Nivel_Clasica.unity
     guid: c9a4600a86ad6cc40978cdc0a162f363
   - enabled: 1
     path: Assets/Scenes/4 - Nivel_Victoriano.unity
     guid: f7fef2ffbd2f54048af03d4e68fc3fc7
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 931c58c2f519d52438b73779c9429e68
   m_configObjects: {}
