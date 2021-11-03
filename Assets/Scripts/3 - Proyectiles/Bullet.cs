@@ -37,7 +37,6 @@ public class Bullet : MonoBehaviour
         if (enemy3 != null)
         {
             enemy3.TakeDamage(bulletDamage);
-
         }
 
         Destroy();VictorianEnemyRange enemy4 = hitInfo.GetComponent<VictorianEnemyRange>();
@@ -45,6 +44,13 @@ public class Bullet : MonoBehaviour
         {
             enemy4.TakeDamage(bulletDamage);
 
+        }
+        Destroy();
+
+        Destroy(); ElSupervisor enemy5 = hitInfo.GetComponent<ElSupervisor>();
+        if (enemy5 != null)
+        {
+            enemy5.TakeDamage(bulletDamage);
         }
         Destroy();
     }

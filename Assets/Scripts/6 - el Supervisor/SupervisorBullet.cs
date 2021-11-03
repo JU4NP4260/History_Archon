@@ -13,22 +13,21 @@ public class SupervisorBullet : MonoBehaviour
         rb.velocity = transform.right * bulletSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    private void OnCollisionEnter2D(Collision2D other)
     {
 
-        PlayerController player = hitInfo.GetComponent<PlayerController>();
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+
         if (player != null)
         {
-            player.ChangeHealth(bulletDamage);
-
+            player.ChangeHealth(-1);
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
         }
-        Destroy();
-
+        Destroy(gameObject);
     }
 
     private void Destroy()
     {
         Destroy(gameObject);
-
     }
 }
