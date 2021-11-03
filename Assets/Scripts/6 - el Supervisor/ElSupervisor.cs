@@ -18,6 +18,8 @@ public class ElSupervisor : MonoBehaviour
     [Header("Boss Health")]
     public int CurrentBossHealth;
     public int bossHealth = 70;
+    public Transform healthDropPos;
+    public GameObject healthDrop;
 
 
     private float rotationCycle;
@@ -29,6 +31,7 @@ public class ElSupervisor : MonoBehaviour
         rotationCycle = 1f;
         CurrentBossHealth = bossHealth;
     }
+
     void Update()
     {
         if (timeBtwShot <= Time.time)
@@ -51,11 +54,29 @@ public class ElSupervisor : MonoBehaviour
         Instantiate(Projectile, shootPos4.position, shootPos4.rotation);
     }
 
+    void DropHealth()
+    {
+        Instantiate(healthDrop, healthDropPos.position, healthDropPos.rotation);
+    }
+
     public void TakeDamage(int damage)
     {
         CurrentBossHealth -= damage;
         Debug.Log("Damage TAKEN!");
         FindObjectOfType<AudioManager>().Play("EnemyHurt");
+        if (CurrentBossHealth == 60)
+            DropHealth();
+        if (CurrentBossHealth == 50)
+            DropHealth();
+        if (CurrentBossHealth == 40)
+            DropHealth();
+        if (CurrentBossHealth == 30)
+            DropHealth();
+        if (CurrentBossHealth == 20)
+            DropHealth();
+        if (CurrentBossHealth == 10)
+            DropHealth();
+
 
         if (CurrentBossHealth <= 0)
         {

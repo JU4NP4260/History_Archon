@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SupervisorBullet : MonoBehaviour
 {
-    public float bulletSpeed = 10f;
+    public float dieTime, bulletSpeed = 10f;
     public int bulletDamage = 1;
     public Rigidbody2D rb;
+    public GameObject player;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class SupervisorBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Destroy(gameObject);
 
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
 
@@ -23,11 +25,17 @@ public class SupervisorBullet : MonoBehaviour
             player.ChangeHealth(-1);
             FindObjectOfType<AudioManager>().Play("PlayerHurt");
         }
-        Destroy(gameObject);
     }
 
     private void Destroy()
     {
+        Destroy(gameObject);
+    }
+
+    IEnumerator CountDownTime()
+    {
+        yield return new WaitForSeconds(dieTime);
+
         Destroy(gameObject);
     }
 }

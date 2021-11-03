@@ -114,7 +114,13 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
+    IEnumerator enemy5Damage(ElSupervisor enemy)
+    {
+        enemy.TakeDamage(meleeDamage);
 
+        yield return new WaitForSeconds(0.6f);
+
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
