@@ -14,6 +14,6 @@ public class credits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0f, Move + 0.008f, 0f);
+        transform.Translate(0f, Move + 0.003f, 0f);
     }
 }
